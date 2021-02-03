@@ -15,5 +15,6 @@ RUN install_packages bluez bluez-btmgmt py3-dbus py3-gobject3
 COPY . .
 RUN chmod +x /usr/src/bluetooth-agent
 
+COPY ./firmware /lib/firmware
 ENTRYPOINT [ "/bin/bash", "/usr/src/entry.sh" ]
 CMD [ "/usr/src/bluetooth-agent" ]
